@@ -538,13 +538,6 @@ python -m pytest tests/
 - **Financial Research Community** for contrarian analysis methodologies
 - **Open Source Contributors** who make projects like this possible
 
-## 📞 Support
-
-- 📧 **Email**: [Your Email]
-- 💬 **Issues**: [GitHub Issues](https://github.com/Avikalp-Karrahe/contrarian-analysis-pipeline/issues)
-- 📖 **Documentation**: [Project Wiki](https://github.com/Avikalp-Karrahe/contrarian-analysis-pipeline/wiki)
-- 💼 **LinkedIn**: [Your LinkedIn Profile]
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
