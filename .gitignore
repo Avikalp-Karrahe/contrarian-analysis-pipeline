@@ -1,0 +1,102 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PYTHONPATH
+
+# Virtual environments
+automation_env/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+backups/
+*.bak
+*.backup
+
+# Output directories
+outputs/
+reports/
+csv_exports/
+master_contrarian_db/
+simplified_contrarian_db/
+data/master_contrarian_db/
+data/run_outputs/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data files (optional - uncomment if you don't want to track data)
+# *.csv
+# *.xlsx
+# *.json
+
+# Presentation and documentation drafts
+*.ppt
+*.pptx
+*.pdf
+*.docx
+
+# Extracted or temporary text files
+extracted_text.txt
+*.txt.tmp
+
+# Analysis results with timestamps
+*_202*.csv
+*_202*.json
+
+# Development and testing scripts
+test_*.py
+demo_*_local.py
+*_v0.py

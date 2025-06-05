@@ -1,0 +1,90 @@
+# Automated Pipeline Configuration - Version 0
+# This file controls the behavior of the automated sentiment analysis pipeline
+
+# Data Collection Settings
+data_collection:
+  max_age_hours: 6  # How old data can be before re-collecting
+  guardian_api:
+    enabled: true
+    timeout: 600  # 10 minutes
+  
+# Sentiment Analysis Settings
+sentiment_analysis:
+  max_age_hours: 6  # How old sentiment data can be before re-analyzing
+  llama3:
+    enabled: true
+    timeout: 1200  # 20 minutes for Llama3 processing
+    model_path: null  # Use default model
+  
+# Contrarian Analysis Settings
+contrarian_analysis:
+  enabled: true
+  timeout: 300  # 5 minutes
+  
+# Signal Generation Settings
+signal_generation:
+  thresholds:
+    strong_negative_ratio: 0.6  # >60% negative = strong buy signal
+    weak_negative_ratio: 0.4    # 40-60% negative = weak buy signal
+    strong_positive_ratio: 0.7  # >70% positive = potential sell signal
+  
+  confidence_calculation:
+    min_articles_high_confidence: 50
+    min_articles_medium_confidence: 20
+    min_articles_low_confidence: 10
+
+# Scheduling Settings
+scheduling:
+  enabled: false  # Set to true to enable automatic scheduling
+  daily_run_time: "09:00"  # Daily run at 9 AM
+  interval_hours: 6  # Run every 6 hours
+  
+# Logging Settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_file: "pipeline_v0.log"
+  max_log_size_mb: 10
+  backup_count: 5
+  
+# Output Settings
+output:
+  save_reports: true
+  report_format: "json"  # json, csv, both
+  archive_old_reports: true
+  max_reports_to_keep: 30
+  
+# Notification Settings (for future implementation)
+notifications:
+  enabled: false
+  email:
+    enabled: false
+    smtp_server: null
+    recipients: []
+  slack:
+    enabled: false
+    webhook_url: null
+    
+# Company Settings (for future multi-company support)
+companies:
+  apple:
+    enabled: true
+    symbol: "AAPL"
+    notebooks:
+      guardian_api: "Llama3_SentimentAnalysis/Guardian_API.ipynb"
+      sentiment_analysis: "Llama3_SentimentAnalysis/Sentiment analysis using lama.ipynb"
+      contrarian_analysis: "Contrarian/apple_contraian.ipynb"
+    data_files:
+      articles: "Llama3_SentimentAnalysis/apple_articles_with_body.xlsx"
+      sentiment: "Llama3_SentimentAnalysis/sentiment_output.csv"
+      
+# Error Handling
+error_handling:
+  max_retries: 3
+  retry_delay_seconds: 60
+  continue_on_error: true  # Continue pipeline with existing data if step fails
+  
+# Performance Settings
+performance:
+  parallel_processing: false  # For future implementation
+  max_workers: 2
+  memory_limit_gb: 4
